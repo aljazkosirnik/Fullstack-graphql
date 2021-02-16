@@ -1,0 +1,111 @@
+// ##################################################
+// Grids
+// ##################################################
+
+$css_grid: false !default; // Use CSS Grid (true) or Flexbox (false)
+
+
+
+// ##################################################
+// Main Fonts
+// ##################################################
+
+$font_primary:	 'Open Sans', sans-serif;
+$font_secondary: 'Lato', sans-serif;
+$base_font_size:  16px;
+
+
+// ##################################################
+// Colors
+// ##################################################
+
+// NEUTRAL COLORS
+$cgp_white:                 #fff;
+$cgp_black:                 #081c2f;
+$cgp_grey:                  #616575;
+$cgp_purple:                #7464ac;
+$cgp_orange:                #f89c4f;
+$cgp_validation_failed:     #ff3b30;
+$cgp_border:                 rgba(8, 28, 47, 0.2);
+
+// WCAG Colors
+$cgp_wcag_red:              #f00;
+$cgp_wcag_yellow:           #ff0;
+$cgp_wcag_night:            #ccc;
+$cgp_wcag_green:            #51ff00;
+$cgp_wcag_blue: 	          #0a048e;
+
+
+// ##################################################
+// Z-index
+// ##################################################
+
+$zindex_modal:          999;
+$zindex_cookie_notice:  998;
+$zindex_site_loader:	  101;
+$zindex_header:         100;
+$zindex_menu_more:      101;
+$zindex_slider_arrows:  89;
+
+
+
+
+// ##################################################
+// BOX SHADOW
+// ##################################################
+
+$shadow_big: 0 8px 20px rgba($cgp_black, 0.1);
+$shadow_small: 0 4px 15px rgba($cgp_black, 0.08);
+
+$box_shadow_main: 0 0 8px rgba(8, 28, 47, 0.1);
+$box_shadow_secondary: 0 0 16px rgba(9, 28, 46, 0.16);
+
+
+
+// ##################################################
+// Margins
+// ##################################################
+
+$section_top_spacing_md : 120px;
+$section_top_spacing_sm : 80px;
+$section_top_spacing_xs : 60px;
+
+$text_section_top_spacing_md: 80px;
+$text_section_top_spacing_sm: 60px;
+$text_section_top_spacing_xs: 40px;
+
+
+
+// ##################################################
+// Class names (read from config JSON)
+// ##################################################
+
+// Usage: body.#{$class_open_menu} {};
+
+$class_active:				      "is-active";
+$class_open:				        "is-open";
+$class_open_menu:			      "is-open-menu";
+$class_open_submenu:		    "is-open-submenu";
+$class_open_search:			    "is-search-menu";
+$class_validation_failed: 	"validation-failed";
+$class_visible:             "is-visible";
+$class_hidden:              "is-hidden";
+
+
+
+// ##################################################
+// Transitions & easings
+// ##################################################
+
+// Easings
+$easing1: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$easingType1: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+$easingType2: cubic-bezier(0.19, 1, 0.22, 1);
+
+// Transitions
+$transition_duration: 250ms;
+$transition_easing:   linear;
+
+$transition_easing_fadeup:         cubic-bezier(0.46, 0.03, 0.52, 0.96);
+$transition_easing_fadeLeftRight:  cubic-bezier(0.19, 1, 0.22, 1);
+$transition_easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);

@@ -1,0 +1,22 @@
+//*******************************************************************************
+// 0.0 - INCLUDES: Website
+//*******************************************************************************
+
+// Helper styles
+@import "import";                     // SCSS Mixins/variables/extensions
+@import "base/reset";                 // Reset css
+@import "grid/display"; 			        // Display utility
+@import "grid/grid_main";			        // Site girds
+
+// Third party vendors styles
+@import '../node_modules/swiper/css/swiper.min';
+
+// Base styles
+@import "base/webfonts";				      // Webfonts
+@import "base/utility_class";			    // Utility clsses
+@import "base/general";						    // General styles and custom reset
+
+
+// WCAG Theme
+@import "wcag-theme/wcag_contrast";
+@import "wcag-theme/wcag_font";

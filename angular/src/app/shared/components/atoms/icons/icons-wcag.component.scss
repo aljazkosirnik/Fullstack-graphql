@@ -1,0 +1,99 @@
+//*******************************************************************************
+// WCAG Theme - Black white
+//*******************************************************************************
+@import "import";
+
+.wcag-contrast--black-white {
+  .icon {
+    // ##################################################
+
+    &[class*='icon-chevron-'] {
+      background-image: url("data:image/svg+xml,#{$chevron_down--white}");
+    }
+
+    // ##################################################
+
+    &[class*='icon-chevron-left'],
+    &[class*='icon-chevron-right'] {
+      background-image: url("data:image/svg+xml,#{$chevron_left--white}");
+    }
+
+    // ##################################################
+
+    &-arrow-right,
+    &-arrow-left {
+      background-image: url("data:image/svg+xml,#{$arrow_right--white}");
+
+      &::before {
+        background-image: url("data:image/svg+xml,#{$arrow_right}");
+      }
+    }
+  }
+}
+
+
+//*******************************************************************************
+// WCAG Theme - Black yellow
+//*******************************************************************************
+
+.wcag-contrast--blue-yellow,
+.wcag-contrast--black-yellow {
+  .icon {
+    // ##################################################
+
+    &[class*='icon-chevron-'] {
+      background-image: url("data:image/svg+xml,#{$chevron_down--yellow}");
+    }
+
+    // ##################################################
+
+    &[class*='icon-chevron-left'],
+    &[class*='icon-chevron-right'] {
+      background-image: url("data:image/svg+xml,#{$chevron_left--yellow}");
+    }
+
+    // ##################################################
+
+    &-arrow-right,
+    &-arrow-left {
+      background-image: url("data:image/svg+xml,#{$arrow_right--yellow}");
+
+      &::before {
+        background-image: url("data:image/svg+xml,#{$arrow_right}");
+      }
+    }
+  }
+}
+
+
+//*******************************************************************************
+// WCAG Theme - Black green
+//*******************************************************************************
+
+.wcag-contrast--black-green {
+  .icon {
+    // ##################################################
+
+    &[class*='icon-chevron-'] {
+      background-image: url("data:image/svg+xml,#{$chevron_down--green}");
+    }
+
+    // ##################################################
+
+    &[class*='icon-chevron-left'],
+    &[class*='icon-chevron-right'] {
+      background-image: url("data:image/svg+xml,#{$chevron_left--green}");
+    }
+
+    // ##################################################
+
+    &-arrow-right,
+    &-arrow-left {
+      background-image: url("data:image/svg+xml,#{$arrow_right--green}");
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

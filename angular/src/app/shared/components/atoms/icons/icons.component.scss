@@ -1,0 +1,183 @@
+//*******************************************************************************
+// Icons
+//*******************************************************************************
+
+@import "import";
+
+// General Icons
+::ng-deep {
+  .icon {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    display: block;
+
+    // Icons for hover effect
+    &::before {
+      @extend %content;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      opacity: 0;
+      @include transition(opacity 0.3s ease);
+    }
+
+    // ##################################################
+
+    &[class*='icon-arrow-'] {
+      width: 10px;
+      height: 10px;
+    }
+
+
+    // ##################################################
+
+    &-arrow-right,
+    &-arrow-left {
+      background-image: url("data:image/svg+xml,#{$arrow_right}");
+
+      &::before {
+        background-image: url("data:image/svg+xml,#{$arrow_right--white}");
+      }
+    }
+
+    // ##################################################
+
+    &-arrow-left {
+      @include rotate(180deg);
+    }
+
+    // ##################################################
+
+    &[class*='icon-chevron-'] {
+      width: 14px;
+      height: 10px;
+      background-image: url("data:image/svg+xml,#{$chevron_down}");
+    }
+
+    // ##################################################
+
+    &-chevron-up {
+      @include rotate(180deg);
+    }
+
+    // ##################################################
+
+    &[class*='icon-chevron-left'],
+    &[class*='icon-chevron-right'] {
+      width: 10px;
+      height: 18px;
+      background-image: url("data:image/svg+xml,#{$chevron_left}");
+    }
+
+    // ##################################################
+
+    &[class*='icon-chevron-right'] {
+      @include rotate(180deg);
+    }
+
+    // ##################################################
+
+    &-cross {
+      width: 22px;
+      height: 22px;
+      background-image: url("data:image/svg+xml,#{$icon_cross}");
+    }
+
+    // ##################################################
+
+    &-minus-circle {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_minus-circle}");
+    }
+
+    // ##################################################
+
+    &-plus-circle {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_plus-circle}");
+    }
+
+    // ##################################################
+
+    &-text-width {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_text-width}");
+    }
+
+    // ##################################################
+
+    &-undo {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_undo}");
+    }
+
+    // ##################################################
+
+    &-moon {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_moon}");
+    }
+
+    // ##################################################
+
+    &[class*='-eye'] {
+      width: 16px;
+      height: 16px;
+    }
+
+    // ##################################################
+
+    &-eye {
+      background-image: url("data:image/svg+xml,#{$icon_eye}");
+    }
+
+    // ##################################################
+
+    &-eye--white {
+      background-image: url("data:image/svg+xml,#{$icon_eye--white}");
+    }
+
+    // ##################################################
+
+    &-eye--yellow {
+      background-image: url("data:image/svg+xml,#{$icon_eye--yellow}");
+    }
+
+    // ##################################################
+
+    &-bold {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_bold}");
+    }
+
+    // ##################################################
+
+    &-eye--green {
+      background-image: url("data:image/svg+xml,#{$icon_eye--green}");
+    }
+
+    // ##################################################
+
+    &-wheelchair {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_wheelchair}");
+    }
+
+    // ##################################################
+
+    &-focus {
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,#{$icon_focus}");
+    }
+  }
+}

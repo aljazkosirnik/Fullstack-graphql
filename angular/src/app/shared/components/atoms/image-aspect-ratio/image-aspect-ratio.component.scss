@@ -1,0 +1,97 @@
+//*******************************************************************************
+// IMAGES
+//*******************************************************************************
+
+@import "../../../../../scss/import";
+
+.image-aspect {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    position: relative;
+    height: 0;
+    width: 100%;
+  }
+
+  // ##################################################
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  // ##################################################
+
+  &__bg {
+    @include absoluted-fullwidth;
+    background-size: cover;
+    background-position: center center;
+
+    // When loaded, hide the img
+    &[style*="background-image"] > img {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  // ##################################################
+
+  & > * {
+    @extend %abs_pos_fullwidth;
+  }
+
+  // ##################################################
+
+  figure {
+    margin: 0;
+  }
+
+  // ##################################################
+
+  picture {
+    width: 100%;
+    height: auto;
+  }
+
+  // ##################################################
+
+  // Aspect 16:9
+  &--16-9 {
+    &::before {
+      padding-bottom: 56.25%;
+    }
+  }
+
+  // ##################################################
+
+  // Aspect 16:6
+  &--16-6 {
+    &::before {
+      padding-bottom: 37.5%;
+    }
+  }
+
+  // ##################################################
+
+  // Aspect 16:11
+  &--16-11 {
+    &::before {
+      padding-bottom: 68.75%;
+    }
+  }
+
+  // ##################################################
+
+  // Aspect 6:7
+  &--6-7 {
+    &::before {
+      padding-bottom: 116.66%;
+    }
+  }
+}

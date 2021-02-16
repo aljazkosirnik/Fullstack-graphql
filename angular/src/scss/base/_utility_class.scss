@@ -1,0 +1,235 @@
+//**********************************************************
+// BACKGROUNDS
+//**********************************************************
+
+.cover-bg {
+  @extend %abs_pos_fullwidth;
+  background-size: cover;
+  background-position: center center;
+
+  img {
+    display: none;
+  }
+}
+
+.card {
+  position: relative;
+  box-shadow: 0 0 16px rgba(9, 28, 46, 0.16);
+  border-radius: 2px;
+  background-color: $cgp_white;
+}
+
+//**********************************************************
+// TEXT ALIGN
+//**********************************************************
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+//**********************************************************
+// SCREEN READER
+//**********************************************************
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.button {
+  @extend %reset_button;
+}
+
+//*******************************************************************************
+// TEXT
+//*******************************************************************************
+
+.text {
+
+  &--12 {
+    @extend %fontsize12;
+  }
+
+  // ##################################################
+
+  &--14 {
+    @extend %fontsize14;
+  }
+
+  // ##################################################
+
+  &--16 {
+    @extend %fontsize16;
+  }
+
+  // ##################################################
+
+  &--18 {
+    @extend %fontsize18;
+  }
+
+  // ##################################################
+
+  &--20 {
+    @extend %fontsize20;
+  }
+
+  // ##################################################
+
+  &--24 {
+    @extend %fontsize24;
+  }
+
+  // ##################################################
+
+  &--28 {
+    @extend %fontsize28;
+  }
+
+  // ##################################################
+
+  &--white {
+    color: $cgp_white;
+  }
+
+  // ##################################################
+
+  &--gray {
+    color: $cgp_grey;
+  }
+
+  // ##################################################
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  // ##################################################
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.font {
+  &-secondary {
+    font-family: $font_secondary;
+  }
+}
+
+//*******************************************************************************
+// VISIBILITY
+//*******************************************************************************
+
+.hidden {
+
+  // Below 767px
+  &-mobile {
+
+    // Mobile
+    @media #{$breakpoint-xs-only} {
+      display: none;
+    }
+  }
+
+  // ##################################################
+
+  // Below 1023px
+  &-tablet-p {
+
+    // Tablet P and down
+    @media #{$breakpoint-sm-down} {
+      display: none;
+    }
+  }
+}
+
+.visible {
+
+  // Below 1013px
+  &-mobile {
+    display: none;
+
+    // Mobile
+    @media #{$breakpoint-xs-only} {
+      display: block;
+    }
+  }
+
+  // ##################################################
+
+  // Below 1023px
+  &-tablet-p {
+    display: none;
+
+    // Tablet P and down
+    @media #{$breakpoint-sm-down} {
+      display: block;
+    }
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+//*******************************************************************************
+// Swiper slider paginations
+//*******************************************************************************
+
+.swiper-pagination {
+  position: relative;
+  padding: 10px 0;
+  margin: auto;
+  z-index: 1;
+  text-align: center;
+
+  // ##################################################
+
+  &-bullet {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    color: #000;
+    background-color: white;
+    border-radius: 100%;
+    margin: 5px;
+    border: 1px solid $cgp_grey;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.6;
+    @include transition(border 0.3s ease, background-color 0.3s ease);
+
+    // Mobile
+    @media #{$breakpoint-xs-only} {
+      width: 8px;
+      height: 8px;
+      margin: 3px;
+    }
+
+    // ##################################################
+
+    &-active {
+      border-color: transparent;
+      background-color: #007aff;
+    }
+  }
+}

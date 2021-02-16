@@ -1,0 +1,23 @@
+// *******************************************************************************
+// WCAG Theme
+// *******************************************************************************
+
+@import "import";
+
+[class*='wcag-contrast--'] {
+  .btn {
+    color: var(--wcag-color);
+    background-color: var(--wcag-background);
+    border: 1px solid var(--wcag-color);
+
+    // ##################################################
+
+    // Hover/Focus
+    &:hover,
+    &:focus {
+      color: var(--wcag-color);
+      background-color: var(--wcag-background);
+      border-color: var(--wcag-color);
+    }
+  }
+}

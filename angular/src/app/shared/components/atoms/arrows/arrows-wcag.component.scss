@@ -1,0 +1,33 @@
+//*******************************************************************************
+// WCAG Theme
+//*******************************************************************************
+@import "import";
+
+[class*='wcag-contrast--']:not(.wcag-contrast--night) {
+  .arrow {
+    border: 1px solid var(--wcag-color);
+
+    .icon::before {
+      display: none;
+    }
+
+    // ##################################################
+
+    &:hover {
+      background-color: var(--wcag-background);
+      box-shadow: 0 0 0 3px rgba(var(--wcag-color), 0.2);
+    }
+
+    // ##################################################
+
+    &--white {
+      background-color: var(--wcag-background);
+
+      &:hover {
+        .icon::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

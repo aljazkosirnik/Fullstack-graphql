@@ -1,0 +1,12 @@
+<div
+  class="image-aspect"
+  [ngClass]="modifier ? 'image-aspect--' + modifier : ''"
+>
+  <div class="image-aspect__bg" data-responsive="responsive-bg-image">
+    <img
+      class="responsive-bg-img"
+      [src]="imageUrl"
+      [alt]="imageAlt"
+    />
+  </div>
+</div>

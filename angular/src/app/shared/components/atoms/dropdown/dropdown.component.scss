@@ -1,0 +1,189 @@
+//**********************************************************
+// DROPDOWN
+//**********************************************************
+
+@import "import";
+
+::ng-deep {
+  .dropdown {
+    width: 100%;
+    max-width: 300px;
+    height: 56px;
+    border-radius: 2px;
+    border: 1px solid $cgp_border;
+    padding: 10px 14px;
+    background-color: $cgp_white;
+    position: relative;
+    cursor: pointer;
+    @include transition(border 0.3s ease);
+
+    &:focus {
+      border: 1px dotted $cgp_border;
+    }
+
+    // ##################################################
+
+    &__label {
+      display: block;
+      color: $cgp_purple;
+      @include fontsize-rem(11px);
+      font-weight: 700;
+      margin: 0;
+      position: absolute;
+      top: 6px;
+      left: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include transition(color 0.3s ease);
+
+      span {
+        font-weight: 400;
+      }
+    }
+
+    // ##################################################
+
+    &__placeholder {
+      @extend %reset_button;
+      width: 100%;
+      color: $cgp_grey;
+      @include fontsize-rem(14px);
+      font-weight: 300;
+      padding: 0;
+      margin-top: 17px;
+      text-align: left;
+      letter-spacing: inherit;
+      pointer-events: none;
+    }
+
+    // ##################################################
+
+    &__list {
+      position: absolute;
+      top: calc(100% + 8px);
+      width: calc(100% + 2px);
+      left: -1px;
+      right: -1px;
+      box-shadow: $box_shadow_main;
+      border-radius: 2px;
+      background-color: $cgp_white;
+      list-style: none;
+      padding: 15px;
+      margin-bottom: 0;
+      display: none;
+      z-index: 99;
+
+      // ##################################################
+
+      &-item {
+        display: block;
+      }
+
+      // ##################################################
+
+      &-option {
+        cursor: pointer;
+        @include fontsize-rem(14px);
+        border-bottom: 1px dotted transparent;
+        @include transition(color 0.3s ease, border 0.3s ease);
+
+        &:hover {
+          border-color: $cgp_purple;
+          color: $cgp_purple;
+        }
+      }
+
+      // ##################################################
+
+      // Radio button
+      input {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        opacity: 0;
+      }
+
+      input:checked + .dropdown__list-option {
+        border-color: $cgp_purple;
+        color: $cgp_purple;
+      }
+    }
+
+    // ##################################################
+
+    .icon[class*='icon-chevron-'] {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      width: 15px;
+      height: 15px;
+      pointer-events: none;
+      margin-top: -5px;
+    }
+
+    // ##################################################
+
+    &.is-focused {
+      border-color: $cgp_black;
+    }
+
+    // ##################################################
+
+    &.is-failed {
+      border-color: $cgp_validation_failed;
+
+      .text-field__label,
+      .text-field__message {
+        color: $cgp_validation_failed;
+      }
+    }
+
+    // ##################################################
+
+    &.is-success {
+      border-color: #4cd964;
+
+      .text-field__label,
+      .text-field__message {
+        color: #4cd964;
+      }
+    }
+
+    // ##################################################
+
+    &.is-disabled {
+      pointer-events: none;
+      background-color: rgba(8, 28, 47, 0.05);
+
+      .text-field__label {
+        color: $cgp_grey;
+      }
+    }
+
+    // ##################################################
+
+    &.is-open {
+      border-color: $cgp_black;
+
+      .dropdown__list {
+        display: block;
+      }
+
+      .icon[class*='icon-chevron-'] {
+        @include rotate(-180deg);
+      }
+    }
+
+    // ##################################################
+
+    &.dropdown-failed {
+      border-color: $cgp_validation_failed;
+
+      .dropdown__label {
+        color: $cgp_validation_failed;
+      }
+
+    }
+  }
+}

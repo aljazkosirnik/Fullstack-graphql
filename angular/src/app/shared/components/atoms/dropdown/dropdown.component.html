@@ -1,0 +1,24 @@
+<div class="dropdown-wrapper">
+  <div *ngIf="label" class="dropdown__label : text--15">{{ label }}</div>
+  <div class="dropdown" [attr.aria-required]="required" [class.is-open]="isOpen" [class.dropdown--blue]="blue" (click)="isOpen = !isOpen">
+    <button
+      type="button"
+      class="dropdown__placeholder"
+      aria-haspopup="listbox"
+      aria-labelledby="dropdown-label dropdown-button"
+      [attr.aria-expanded]="isOpen"
+    >
+      <span *ngIf="!additionalText">{{ placeholder }}</span>
+      <span *ngIf="additionalText">{{ additionalText | translate: { item: placeholder } }}</span>
+    </button>
+
+    <div class="dropdown__list-wrapper">
+      <ul class="dropdown__list" role="listbox" aria-labelledby="dropdown-label">
+        <li *ngFor="let item of items" (click)="select(item)" class="dropdown__list-option" role="option">
+          <span *ngIf="!additionalText">{{ item }}</span>
+          <span *ngIf="additionalText">{{ additionalText | translate: { item: item } }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

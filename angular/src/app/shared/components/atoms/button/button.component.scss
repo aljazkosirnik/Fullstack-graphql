@@ -1,0 +1,112 @@
+// *******************************************************************************
+// Button
+// *******************************************************************************
+
+@import "import";
+
+::ng-deep {
+  .btn {
+    @include fontsize-rem(18px);
+    display: inline-block;
+    position: relative;
+    color: $cgp_white;
+    font-weight: 700;
+    padding: 11px 10px;
+    background-color: #c53319;
+    transition: 0.2s;
+    border: 0;
+    border-radius: 5px;
+    letter-spacing: inherit;
+    text-align: center;
+
+    // ##################################################
+
+    // Hover/Focus
+    &:hover,
+    &:focus {
+      background-color: #9c2b17;
+    }
+
+    // ##################################################
+
+    span {
+      display: block;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    &.is-loading {
+      position: relative;
+      pointer-events: none !important;
+      color: transparent !important;
+
+      span {
+        color: transparent !important;
+      }
+
+      // ##################################################
+
+      &:before {
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 2px solid $cgp_white;
+        border-top-color: rgba(0, 0, 0, 0);
+        border-left-color: rgba(0, 0, 0, 0);
+
+        @include horizontal-vertical-align(absolute);
+        animation: loadingSpinner 1s infinite linear;
+        -webkit-animation: loadingSpinner 1s infinite linear;
+      }
+
+      // ##################################################
+
+      &:after {
+        display: none !important;
+      }
+    }
+
+    // ##################################################
+
+    // Secondary button
+    &--secondary {
+      background-color: #deb887;
+
+      // ##################################################
+
+      &:hover,
+      &:focus {
+        background-color: #b88b51;
+      }
+
+    }
+
+    // ##################################################
+
+    // Large button
+    &--large {
+      padding: 15px 40px;
+    }
+
+    // ##################################################
+
+    // Medium button
+    &--medium {
+      @include fontsize-rem(16px);
+      min-width: 146px;
+      padding: 10px 30px;
+    }
+
+    // ##################################################
+
+    // Small button
+    &--small {
+      @include fontsize-rem(14px);
+      min-width: 136px;
+      padding: 8px 20px;
+    }
+
+  }
+}

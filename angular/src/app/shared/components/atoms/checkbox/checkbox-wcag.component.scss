@@ -1,0 +1,77 @@
+//*******************************************************************************
+// WCAG Theme
+//*******************************************************************************
+@import "import";
+
+[class*='wcag-contrast--'] {
+  .checkbox {
+
+    &__label {
+
+      // Checkbox : unchecked,checked common
+      &::before,
+      &::after {
+        border-color: var(--wcag-color);
+      }
+
+      // ###########################################################
+
+      // Checkmark icon
+      &::after {
+        background: url("data:image/svg+xml,#{$icon_checkmark--black}") no-repeat center center / 12px auto;
+      }
+
+      // ###########################################################
+
+      &:hover {
+
+        &::before {
+          box-shadow: 0 0 0 3px rgba($cgp_white, 0.2);
+        }
+      }
+
+      // ###########################################################
+
+      a {
+        color: var(--wcag-color);
+      }
+    }
+
+    // ###########################################################
+
+    input {
+
+      &:focus + label {
+        outline: 2px dashed $cgp_wcag_red !important;
+        outline-offset: -2px;
+      }
+
+      // ###########################################################
+
+      // Checked input
+      &:checked + label {
+
+        &::before {
+          background-color: var(--wcag-color);
+        }
+      }
+    }
+  }
+}
+
+//*******************************************************************************
+// WCAG Theme - Yellow black
+//*******************************************************************************
+
+.wcag-contrast--yellow-black {
+  .checkbox {
+
+    &__label {
+
+      // Checkmark icon
+      &::after {
+        background: url("data:image/svg+xml,#{$icon_checkmark--yellow}") no-repeat center center / 12px auto;
+      }
+    }
+  }
+}

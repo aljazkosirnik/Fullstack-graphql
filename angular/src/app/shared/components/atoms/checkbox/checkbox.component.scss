@@ -1,0 +1,131 @@
+// *******************************************************************************
+// CHECKBOX
+// *******************************************************************************
+
+@import "import";
+
+::ng-deep {
+  .checkbox {
+    text-align: left;
+    @include user-select;
+
+    &+.checkbox {
+      margin-top: 14px;
+
+      // Mobile
+      @media #{$breakpoint-xs-only} {
+        margin-top: 10px;
+      }
+    }
+
+    // ##################################################
+
+    &__label {
+      cursor: pointer;
+      margin: 0;
+      padding-left: 34px;
+      position: relative;
+
+      // Mobile
+      @media #{$breakpoint-xs-only} {
+        @include fontsize-rem(13px);
+        line-height: 1.2;
+      }
+
+      // ##################################################
+
+      // Checkbox : unchecked,checked common
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $cgp_purple;
+        border-radius: 2px;
+        @include transition(box-shadow 0.3s ease, background-color 0.3s ease);
+
+        // Mobile
+        @media #{$breakpoint-xs-only} {
+          top: -3px;
+        }
+      }
+
+      // ##################################################
+
+      // Checkmark icon
+      &::after {
+        opacity: 0;
+        z-index: 3;
+        background: url("data:image/svg+xml,#{$icon_checkmark}") no-repeat center center / 12px auto;
+        @include transition(opacity 0.3s ease);
+      }
+
+      // ##################################################
+
+      a {
+        color: $cgp_purple;
+        border-bottom: 1px dotted transparent;
+
+        &:hover {
+          border-color: $cgp_purple;
+        }
+      }
+
+      // ##################################################
+
+      &:hover {
+
+        &::before {
+          box-shadow: 0 0 0 3px rgba($cgp_purple, 0.2);
+        }
+      }
+    }
+
+    // ##################################################
+
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      padding: 0;
+
+      // ##################################################
+
+      // Checked input
+      &:checked+label {
+
+        &::before {
+          background-color: $cgp_purple;
+        }
+
+        // Show checkmark
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      // ##################################################
+      // Validation failed
+      &.validation-failed {
+
+        &+label {
+          color: $cgp_validation_failed;
+
+          &:before {
+            border-color: $cgp_validation_failed;
+          }
+        }
+      }
+    }
+
+    // ##################################################
+
+    span {
+      display: block;
+    }
+  }
+}

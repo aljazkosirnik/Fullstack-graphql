@@ -1,0 +1,54 @@
+[class*='wcag-contrast--'] {
+  body {
+    @include selection(var(--wcag-color), var(--wcag-background));
+    background-color: var(--wcag-background);
+    color: var(--wcag-color);
+  }
+
+  // ##################################################
+
+  .card {
+    background-color: var(--wcag-background);
+  }
+
+  // ##################################################
+
+  *:focus {
+    outline: 2px dashed $cgp_wcag_red !important;
+    outline-offset: -2px;
+  }
+
+
+  //*******************************************************************************
+  // Text
+  //*******************************************************************************
+
+  .text {
+    &--gray {
+      color: var(--wcag-color);
+    }
+  }
+
+  //*******************************************************************************
+  // Swiper slider paginations
+  //*******************************************************************************
+
+  .swiper-pagination {
+
+    // ##################################################
+
+    &-bullet {
+      opacity: 1;
+      color: var(--wcag-color);
+      background-color: var(--wcag-background);
+      border: 1px solid var(--wcag-color);
+
+      // ##################################################
+
+      &-active {
+        border-color: transparent;
+        background-color: var(--wcag-color);
+      }
+    }
+  }
+}

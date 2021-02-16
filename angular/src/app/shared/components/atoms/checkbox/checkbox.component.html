@@ -1,0 +1,14 @@
+<div [formGroup]="form" class="checkbox : text--16">
+  <input
+    type="checkbox"
+    [name]="name"
+    [formControlName]="name"
+    [id]="'id' + id"
+    [required]="required"
+    [attr.aria-required]="required"
+    [class.validation-failed]="form.controls[name].invalid && form.controls[name].touched"
+  />
+  <label class="checkbox__label" [for]="'id' + id">
+    <span class="checkbox__text">{{ label }}<ng-content></ng-content></span>
+  </label>
+</div>

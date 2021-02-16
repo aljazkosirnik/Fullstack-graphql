@@ -1,0 +1,1 @@
+module.exports = {  client: {    service: {      name: 'specto-angular-starter',      url: 'http://localhost/graphql',    }  }};

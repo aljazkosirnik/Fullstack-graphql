@@ -1,0 +1,71 @@
+// *******************************************************************************
+// ARROW [ Default white]
+// *******************************************************************************
+
+@import "import";
+
+::ng-deep {
+  .arrow {
+    width: 32px;
+    height: 32px;
+    border: 1px solid $cgp_black;
+    position: relative;
+    cursor: pointer;
+    border-radius: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include transition(background-color 0.3s ease, box-shadow 0.3s ease);
+
+    .icon {
+      border: 0;
+      background-color: transparent;
+      pointer-events: none;
+    }
+
+    // ##################################################
+
+    &--large {
+
+      // Tablet L and up
+      @media #{$breakpoint-md-up} {
+        width: 50px;
+        height: 50px;
+
+        .icon[class*='icon-arrow-'] {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
+    // ##################################################
+
+    &:hover {
+      background-color: $cgp_black;
+      box-shadow: 0 0 0 3px rgba($cgp_black, 0.2);
+
+      .icon::before {
+        opacity: 1;
+      }
+    }
+
+    // ##################################################
+
+    &--white {
+      border: 1px solid $cgp_white;
+      background-color: $cgp_white;
+
+      // ##################################################
+
+      &:hover {
+        background-color: $cgp_white;
+        box-shadow: 0 0 0 3px rgba($cgp_white, 0.2);
+
+        .icon::before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

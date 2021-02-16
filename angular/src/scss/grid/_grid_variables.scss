@@ -1,0 +1,57 @@
+// ##################################################
+// Grid variables
+// ##################################################
+
+// GRID GUTTERS
+$gutter_xl:                30px;                // Desktop HD
+$gutter_lg:                30px;                // Desktop - large
+$gutter_md:                20px;                // Desktop - regular / Tablet landscape
+$gutter_sm:                20px;                // Tablet portrait
+$gutter_xs:                16px;              	// Mobile
+
+// Cols in grid
+$grid_cols:                12;
+
+// CONTAINER WIDTHS
+$container_xl:			1200px;                     // Desktop HD
+$container_lg:			1170px;                     // Desktop - large / Tablet landscape
+$container_md:			960px;                      // Desktop - regular
+$container_sm:			728px;                      // Tablet - portrait
+$container_xs:			calc(100% - #{$gutter_xs * 2});          // Mobile
+
+// Grid
+$xs-max: 766px !default;                        // Set xs breakpoint's max width
+$sm-max: 1022px !default;                       // Set sm breakpoint's max width
+$md-max: 1170px !default;                       // Set md breakpoint's max width
+$lg-max: 1200px !default;                       // Set lg breakpoint's max width
+
+$sm-start: ($xs-max + 1);                       // Generate sm breakpoint's min width
+$md-start: ($sm-max + 1);                       // Generate md breakpoint's min width
+$lg-start: ($md-max + 1);                       // Generate lg breakpoint's min width
+$xl-start: ($lg-max + 1);                       // Generate xl breakpoint's min width
+
+
+
+// ##################################################
+// Breakpoints
+// ##################################################
+
+// Create breakpoint range statements to be used in media queries
+$breakpoint-xs-only: "only screen and (max-width: #{$xs-max})";       // 0 -> xs-max range [Mobile]
+$breakpoint-sm-up: "only screen and (min-width: #{$sm-start})";       // sm-start -> up range [Tablet P and up]
+$breakpoint-sm-down: "only screen and (max-width: #{$md-start})";     // Tablet P  and down
+$breakpoint-sm-only: "only screen and (min-width: #{$sm-start}) and (max-width: #{$sm-max})";     // sm-start -> sm-max range [Tablet P only]
+$breakpoint-md-up: "only screen and (min-width: #{$md-start})";       // md-start -> up range [Tablet L and up]
+$breakpoint-md-down: "only screen and (max-width: #{$lg-start})";     // Tablet L and down
+$breakpoint-md-only: "only screen and (min-width: #{$md-start}) and (max-width: #{$md-max})"; // Tablet L only
+$breakpoint-sm-md-only: "only screen and (min-width: #{$sm-start}) and (max-width: #{$md-max})"; // Tablet L and P only
+$breakpoint-lg-down: "only screen and (max-width: #{$lg-start})";     // Small desktop and down
+$breakpoint-lg-up: "only screen and (min-width: #{$lg-start})";       // Small desktop and up
+$breakpoint-lg-only: "only screen and (min-width: #{$lg-start}) and (max-width: #{$lg-max})"; // Small desktop only
+$breakpoint-xl-only: "only screen and (min-width: #{$xl-start})";     // Desktop and only
+$breakpoint-xl-up: "only screen and (min-width: #{$xl-start})";       // Desktop and up
+
+$breakpoints-all: ($breakpoint-xs-only, $breakpoint-sm-up, $breakpoint-sm-only, $breakpoint-md-up, $breakpoint-md-only, $breakpoint-lg-up, $breakpoint-lg-only, $breakpoint-xl-up);
+$breakpoint-ups: ($breakpoint-sm-up, $breakpoint-md-up, $breakpoint-lg-up, $breakpoint-xl-up);
+$breakpoint-all-prefixes: ("xs", "xs-only", "sm", "sm-only", "md", "md-only", "lg", "lg-only", "xl");
+$breakpoint-up-prefixes: ("xs", "sm", "md", "lg", "xl");

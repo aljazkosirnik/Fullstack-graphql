@@ -1,0 +1,21 @@
+//*******************************************************************************
+// FADE IN / FADE OUT ANIMATION
+//*******************************************************************************
+.animate-fade {
+
+  // stylelint-disable-next-line plugin/stylelint-bem-namics
+  &.#{$class_visible} {
+    opacity: 1;
+    transition: opacity $transition_duration $transition_easing;
+  }
+
+  // ##################################################
+
+  // stylelint-disable-next-line plugin/stylelint-bem-namics
+  &.#{$class_hidden} {
+    opacity: 0;
+    transition: opacity $transition_duration $transition_easing;
+    pointer-events: none;
+  }
+
+}

@@ -1,0 +1,42 @@
+//*******************************************************************************
+// WCAG Font sizes
+//******************************************************************************
+
+.wcag-font--120 {
+  font-size: 20px;
+}
+
+.wcag-font--110 {
+  font-size: 18px;
+}
+
+.wcag-font--90 {
+  font-size: 14px;
+}
+
+.wcag-font--80 {
+  font-size: 13px;
+}
+
+.wcag-font--readable {
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+
+.wcag-font--bold {
+  font-weight: 700;
+
+  * {
+    font-weight: 700 !important;
+  }
+}
+
+.wcag-font--focus {
+
+  // ##################################################
+
+  *:focus {
+    outline: 2px dashed $cgp_wcag_red !important;
+    outline-offset: -2px;
+  }
+}

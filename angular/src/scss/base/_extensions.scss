@@ -1,0 +1,241 @@
+//*******************************************************************************
+// PLACEHOLDERS
+//*******************************************************************************
+
+// General extensions
+%content {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+// ##################################################
+
+%reset_button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+// ##################################################
+
+%abs_pos_fullwidth {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+//*******************************************************************************
+// FONT SIZES
+//*******************************************************************************
+
+// General page text - Paragraph
+%page_text {
+  @include fontsize-rem(18px);
+  line-height: 1.83;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(16px);
+  }
+}
+
+// ##################################################
+
+%fontsize28 {
+  @include fontsize-rem(28px);
+  line-height: 1.39;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(20px);
+    line-height: 1.5;
+  }
+}
+
+// ##################################################
+
+%fontsize24 {
+  @include fontsize-rem(24px);
+  line-height: 1.5;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(18px);
+    line-height: 1.83;
+  }
+}
+
+// ##################################################
+
+%fontsize20 {
+  @include fontsize-rem(20px);
+  line-height: 1.6;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(18px);
+  }
+}
+
+// ##################################################
+
+%fontsize18 {
+  @include fontsize-rem(18px);
+  line-height: 1.83;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(16px);
+    line-height: 1.81;
+  }
+}
+
+// ##################################################
+
+%fontsize16 {
+  @include fontsize-rem(16px);
+  line-height: 1.81;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(14px);
+    line-height: 1.86;
+  }
+}
+
+// ##################################################
+
+%fontsize14 {
+  @include fontsize-rem(14px);
+  line-height: 1.79;
+}
+
+// ##################################################
+
+%fontsize12 {
+  @include fontsize-rem(12px);
+}
+
+// ##################################################
+
+%title {
+  color: $cgp_black;
+  font-weight: 700;
+
+  // stylelint-disable-next-line plugin/stylelint-bem-namics
+  .blue-bg & {
+    color: $cgp_white;
+  }
+}
+
+// ##################################################
+
+%title_h1 {
+  @extend %title;
+  @include fontsize-rem(56px);
+  line-height: 1.14;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(32px);
+    line-height: 1.41;
+  }
+}
+
+// ##################################################
+
+%title_h2 {
+  @extend %title;
+  @include fontsize-rem(48px);
+  line-height: 1.17;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(33px);
+    line-height: 1.27;
+  }
+}
+
+// ##################################################
+
+%title_h3 {
+  @extend %title;
+  @include fontsize-rem(42px);
+  line-height: 1.14;
+
+  // Tablet L
+  @media #{$breakpoint-md-only} {
+    @include fontsize-rem(36px);
+  }
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(28px);
+    line-height: 1.36;
+  }
+}
+
+
+// ##################################################
+
+%title_h4 {
+  @extend %title;
+  @include fontsize-rem(28px);
+  line-height: 1.39;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(20px);
+    line-height: 1.5;
+  }
+}
+
+// ##################################################
+
+%title_h5 {
+  @extend %title;
+  @include fontsize-rem(24px);
+  line-height: 1.5;
+
+  // Mobile
+  @media #{$breakpoint-xs-only} {
+    @include fontsize-rem(20px);
+  }
+}
+
+// ##################################################
+// ##################################################
+
+%inherit_textstyles {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+  font-style: inherit;
+}
+
+// ##################################################
+// ##################################################
+
+%page_template_top_padding {
+  overflow: hidden;
+  position: relative;
+  padding-top: 139px;
+
+  // Tablet L and down
+  @media #{$breakpoint-md-down} {
+    padding-top: 80px;
+  }
+}

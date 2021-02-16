@@ -1,0 +1,56 @@
+//*******************************************************************************
+// WCAG Theme
+//*******************************************************************************
+@import "import";
+
+[class*='wcag-contrast--'] {
+  .dropdown {
+    border-color: var(--wcag-color);
+    background-color: var(--wcag-background);
+
+    // ##################################################
+
+    &__list {
+      background-color: var(--wcag-background);
+      border: 1px solid var(--wcag-color);
+
+      // ##################################################
+
+      &-option {
+
+        &:hover {
+          border-color: var(--wcag-color);
+          color: inherit;
+        }
+      }
+
+      input:checked + .dropdown__list-option,
+      input:focus + .dropdown__list-option {
+        border-color: var(--wcag-color);
+        color: var(--wcag-color);
+      }
+    }
+
+    // ##################################################
+
+    &__label,
+    &__placeholder {
+      color: var(--wcag-color);
+    }
+
+    // ##################################################
+
+    &.is-focused,
+    &.is-failed,
+    &.is-success,
+    &.is-open,
+    &.dropdown-failed {
+      border-color: var(--wcag-color);
+
+      .text-field__label,
+      .text-field__message {
+        color: inherit;
+      }
+    }
+  }
+}

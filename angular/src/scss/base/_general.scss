@@ -1,0 +1,205 @@
+//*******************************************************************************
+// 1.0 - GENERAL
+//*******************************************************************************
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Text selection styling
+::selection {
+  background-color: $cgp_black;
+  color: $cgp_white;
+}
+
+// Modal window - prevent scrolling
+body {
+  @extend %page_text;
+  color: $cgp_black;
+  font-family: $font_primary;
+  position: relative;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  background-color: #fff;
+
+  &.is-open-menu,
+  &.noscroll {
+    overflow: hidden;
+
+    // Tablet L and up
+    @media #{$breakpoint-md-up} {
+      overflow: auto;
+    }
+  }
+}
+
+// Prevents text selection styling
+.noselect,
+.noselect * {
+  user-select: none;
+}
+
+.main {
+  padding-top: 80px;
+
+  // Tablet P and down
+  @media #{$breakpoint-sm-down} {
+    padding-top: 65px;
+  }
+}
+
+
+//*******************************************************************************
+// 2.0 - GENERAL : Text styles
+//*******************************************************************************
+
+.text,
+.title,
+.title-main {
+  * {
+    @extend %inherit_textstyles;
+  }
+}
+
+// Paragraphs
+p {
+  margin: 0;
+
+  a {
+    border-bottom: 1px dotted transparent;
+
+    &:hover,
+    &:focus {
+      border-color: currentColor;
+    }
+  }
+}
+
+// Links
+a {
+  text-decoration: none;
+  color: inherit;
+  @include transition(color 0.3s ease, border 0.3s ease);
+}
+
+// ##################################################
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+:focus {
+  outline: 1px dotted currentColor;
+}
+
+//*******************************************************************************
+// 3.0 - GENERAL : Images
+//*******************************************************************************
+
+// General image
+img {
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+//*******************************************************************************
+// 4.0 - GENERAL : Section
+//*******************************************************************************
+
+.sc-general {
+  position: relative;
+}
+
+//*******************************************************************************
+// 5.0 - GENERAL : Slider
+//*******************************************************************************
+
+// Hide all slides expect first one till slider loading
+.swiper-container:not(.swiper-container-initialized) .swiper-slide:not(:first-of-type) {
+  display: none !important;
+}
+
+//*******************************************************************************
+// 6.0 GENERAL : Form
+//*******************************************************************************
+
+form select::-ms-expand {
+  display: none;
+}
+
+input,
+select,
+textarea {
+  box-shadow: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+// Ipad and mobile devices
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+// Remove default red border for HTML5 validation
+input:invalid {
+  outline: none;
+}
+
+// Removes "clear field" X buttons in IE
+textarea::-ms-clear,
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  @extend %reset_button;
+}
+
+//*******************************************************************************
+// 7.0 GENERAL : SPINNER
+//*******************************************************************************
+.spinner-wrapper {
+  @include horizontal-vertical-align(absolute);
+
+  // ##################################################
+
+  &.init {
+    position: fixed;
+    z-index: 99999999;
+  }
+
+  // ##################################################
+
+  .spinner {
+    margin: 50% auto;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.3rem solid rgba($cgp_black, 0.3);
+    border-top-color: $cgp_black;
+
+    animation: 1.5s spin infinite linear;
+  }
+}
+
+@keyframes spin {
+  to { @include rotate(360deg); }
+}
+

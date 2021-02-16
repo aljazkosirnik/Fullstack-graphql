@@ -1,0 +1,4 @@
+<div class="btn" [ngClass]="[buttonType, modifier ? 'btn--' + modifier : '', size ? 'btn--' + size : '', isLoading ? 'is-loading' : '']">
+  <ng-content></ng-content>
+  <span app-icons *ngIf="buttonIcon" [modifier]="buttonIcon"></span>
+</div>
