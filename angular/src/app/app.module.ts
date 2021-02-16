@@ -19,10 +19,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphQLModule } from '@core/graphql/graphql.module';
 import { PostsComponent } from './posts/posts.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ViewPostComponent } from './view-post/view-post.component';
 registerLocaleData(localeSl, 'sl_SI');
 
 @NgModule({
-  declarations: [AppComponent, PostsComponent],
+  declarations: [AppComponent, PostsComponent, ViewPostComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -33,6 +37,9 @@ registerLocaleData(localeSl, 'sl_SI');
     TranslateModule.forRoot(translateConfig),
     AppRoutingModule,
     HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    MatGridListModule,
   ],
   providers: [
     CookieService,

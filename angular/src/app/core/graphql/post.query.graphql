@@ -1,0 +1,1 @@
+query posts {  posts {    id    title    content    author {      name    }    comments {      id      reply    }  }}query getPost($id: Int!) {  post(id: $id) {    id    title    content    comments {      id      reply    }    author {      id      name      email    }  }}
