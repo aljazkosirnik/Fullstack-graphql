@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="189e031f-010d-461a-b44d-058d52436097" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular/src/app/core/services/api/post.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular/src/app/core/services/api/post.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular/src/app/posts/posts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular/src/app/posts/posts.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular/src/app/posts/posts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular/src/app/posts/posts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular/src/app/view-post/view-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/angular/src/app/view-post/view-post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular/src/app/view-post/view-post.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/angular/src/app/view-post/view-post.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular/src/app/view-post/view-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular/src/app/view-post/view-post.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-graphql/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-graphql/artisan" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +227,8 @@
       <workItem from="1613388877886" duration="1940000" />
       <workItem from="1613407953282" duration="6631000" />
       <workItem from="1613459668093" duration="4279000" />
-      <workItem from="1613473979311" duration="60000" />
+      <workItem from="1613473979311" duration="926000" />
+      <workItem from="1613544791140" duration="3194000" />
     </task>
     <servers />
   </component>

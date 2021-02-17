@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card *ngFor="let post of (posts$ | async)?.posts">
+  <mat-card *ngFor="let post of posts$ | async">
     <mat-card-subtitle>Post #{{ post.id }}</mat-card-subtitle>
     <mat-card-title>{{ post.title }}</mat-card-title>
     <mat-card-content>
