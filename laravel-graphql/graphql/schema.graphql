@@ -28,6 +28,10 @@ type Post {
     comments: [Comment!]! @hasMany
 }
 
+type Mutation {
+    updatePost(id: ID!, title: String, content: String): Post @update
+}
+
 type Comment {
     id: ID!
     reply: String!

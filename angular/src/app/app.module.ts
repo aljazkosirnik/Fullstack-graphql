@@ -23,10 +23,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ViewPostComponent } from './view-post/view-post.component';
+import { EditPostComponent } from './edit-post/edit-post.component';
+import { ReactiveFormsModule } from '@angular/forms';
 registerLocaleData(localeSl, 'sl_SI');
 
 @NgModule({
-  declarations: [AppComponent, PostsComponent, ViewPostComponent],
+  declarations: [AppComponent, PostsComponent, ViewPostComponent, EditPostComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -40,6 +42,7 @@ registerLocaleData(localeSl, 'sl_SI');
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
+    ReactiveFormsModule,
   ],
   providers: [
     CookieService,

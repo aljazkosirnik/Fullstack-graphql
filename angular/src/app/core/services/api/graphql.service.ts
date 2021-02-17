@@ -18,8 +18,6 @@ export type Scalars = {
   Date: any;
 };
 
-
-
 export type Query = {
   __typename?: 'Query';
   users?: Maybe<UserPaginator>;
@@ -28,17 +26,14 @@ export type Query = {
   post?: Maybe<Post>;
 };
 
-
 export type QueryUsersArgs = {
   first?: Maybe<Scalars['Int']>;
   page?: Maybe<Scalars['Int']>;
 };
 
-
 export type QueryUserArgs = {
   id?: Maybe<Scalars['ID']>;
 };
-
 
 export type QueryPostArgs = {
   id: Scalars['Int'];
@@ -84,7 +79,6 @@ export type User = {
   posts: Array<Post>;
 };
 
-
 export type Post = {
   __typename?: 'Post';
   id: Scalars['ID'];
@@ -101,13 +95,23 @@ export type Comment = {
   post: Post;
 };
 
+export type Mutation = {
+  __typename?: 'Mutation';
+  updatePost?: Maybe<Post>;
+};
+
+export type MutationUpdatePostArgs = {
+  id: Scalars['ID'];
+  title?: Maybe<Scalars['String']>;
+  content?: Maybe<Scalars['String']>;
+};
 
 /** The available directions for ordering a list of records. */
 export enum SortOrder {
   /** Sort records in ascending order. */
   Asc = 'ASC',
   /** Sort records in descending order. */
-  Desc = 'DESC'
+  Desc = 'DESC',
 }
 
 /** Allows ordering a list of records. */
@@ -146,135 +150,113 @@ export enum Trashed {
   /** Return both trashed and non-trashed results. */
   With = 'WITH',
   /** Only return non-trashed results. */
-  Without = 'WITHOUT'
+  Without = 'WITHOUT',
 }
 
-export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
+export type PostsQueryVariables = Exact<{ [key: string]: never }>;
 
-
-export type PostsQuery = (
-  { __typename?: 'Query' }
-  & { posts: Array<(
-    { __typename?: 'Post' }
-    & Pick<Post, 'id' | 'title' | 'content'>
-    & { author: (
-      { __typename?: 'User' }
-      & Pick<User, 'name'>
-    ), comments: Array<(
-      { __typename?: 'Comment' }
-      & Pick<Comment, 'id' | 'reply'>
-    )> }
-  )> }
-);
+export type PostsQuery = { __typename?: 'Query' } & {
+  posts: Array<
+    { __typename?: 'Post' } & Pick<Post, 'id' | 'title' | 'content'> & {
+        author: { __typename?: 'User' } & Pick<User, 'name'>;
+        comments: Array<{ __typename?: 'Comment' } & Pick<Comment, 'id' | 'reply'>>;
+      }
+  >;
+};
 
 export type GetPostQueryVariables = Exact<{
   id: Scalars['Int'];
 }>;
 
+export type GetPostQuery = { __typename?: 'Query' } & {
+  post?: Maybe<
+    { __typename?: 'Post' } & Pick<Post, 'id' | 'title' | 'content'> & {
+        comments: Array<{ __typename?: 'Comment' } & Pick<Comment, 'id' | 'reply'>>;
+        author: { __typename?: 'User' } & Pick<User, 'id' | 'name' | 'email'>;
+      }
+  >;
+};
 
-export type GetPostQuery = (
-  { __typename?: 'Query' }
-  & { post?: Maybe<(
-    { __typename?: 'Post' }
-    & Pick<Post, 'id' | 'title' | 'content'>
-    & { comments: Array<(
-      { __typename?: 'Comment' }
-      & Pick<Comment, 'id' | 'reply'>
-    )>, author: (
-      { __typename?: 'User' }
-      & Pick<User, 'id' | 'name' | 'email'>
-    ) }
-  )> }
-);
+export type UsersQueryVariables = Exact<{ [key: string]: never }>;
 
-export type UsersQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type UsersQuery = (
-  { __typename?: 'Query' }
-  & { users?: Maybe<(
-    { __typename?: 'UserPaginator' }
-    & { data: Array<(
-      { __typename?: 'User' }
-      & Pick<User, 'id' | 'name'>
-    )> }
-  )> }
-);
+export type UsersQuery = { __typename?: 'Query' } & {
+  users?: Maybe<{ __typename?: 'UserPaginator' } & { data: Array<{ __typename?: 'User' } & Pick<User, 'id' | 'name'>> }>;
+};
 
 export const PostsDocument = gql`
-    query posts {
-  posts {
-    id
-    title
-    content
-    author {
-      name
-    }
-    comments {
+  query posts {
+    posts {
       id
-      reply
+      title
+      content
+      author {
+        name
+      }
+      comments {
+        id
+        reply
+      }
     }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class PostsGQL extends Apollo.Query<PostsQuery, PostsQueryVariables> {
+  document = PostsDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
   }
 }
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class PostsGQL extends Apollo.Query<PostsQuery, PostsQueryVariables> {
-    document = PostsDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
 export const GetPostDocument = gql`
-    query getPost($id: Int!) {
-  post(id: $id) {
-    id
-    title
-    content
-    comments {
+  query getPost($id: Int!) {
+    post(id: $id) {
       id
-      reply
+      title
+      content
+      comments {
+        id
+        reply
+      }
+      author {
+        id
+        name
+        email
+      }
     }
-    author {
-      id
-      name
-      email
-    }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GetPostGQL extends Apollo.Query<GetPostQuery, GetPostQueryVariables> {
+  document = GetPostDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
   }
 }
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class GetPostGQL extends Apollo.Query<GetPostQuery, GetPostQueryVariables> {
-    document = GetPostDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
 export const UsersDocument = gql`
-    query users {
-  users {
-    data {
-      id
-      name
+  query users {
+    users {
+      data {
+        id
+        name
+      }
     }
+  }
+`;
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UsersGQL extends Apollo.Query<UsersQuery, UsersQueryVariables> {
+  document = UsersDocument;
+
+  constructor(apollo: Apollo.Apollo) {
+    super(apollo);
   }
 }
-    `;
-
-  @Injectable({
-    providedIn: 'root'
-  })
-  export class UsersGQL extends Apollo.Query<UsersQuery, UsersQueryVariables> {
-    document = UsersDocument;
-    
-    constructor(apollo: Apollo.Apollo) {
-      super(apollo);
-    }
-  }
